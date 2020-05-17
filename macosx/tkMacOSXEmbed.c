@@ -148,6 +148,7 @@ TkpMakeWindow(
 	macWin->referenceCount = 0;
 	macWin->flags = TK_CLIP_INVALID;
 	macWin->view = nil;
+	macWin->postponedSNDIRCalls = nil;
 	macWin->context = NULL;
 	macWin->size = CGSizeZero;
 	if (Tk_IsTopLevel(macWin->winPtr)) {
@@ -315,6 +316,7 @@ TkpUseWindow(
 
     macWin->winPtr = winPtr;
     macWin->view = nil;
+    macWin->postponedSNDIRCalls = nil;
     macWin->context = NULL;
     macWin->size = CGSizeZero;
     macWin->visRgn = NULL;
